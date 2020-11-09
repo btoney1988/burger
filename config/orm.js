@@ -1,9 +1,9 @@
-const connection = require("connection");
+const connection = require("./connection");
 
 function insertQMarks(num) {
-  var arr = [];
+  const arr = [];
 
-  for (var i = 0; i < num; i++) {
+  for (let i = 0; i < num; i++) {
     arr.push("?");
   }
 
@@ -11,7 +11,7 @@ function insertQMarks(num) {
 }
 
 function toSql(ob) {
-  let arr = [];
+  const arr = [];
 
   for (let key in ob) {
     const value = ob[key];
@@ -27,18 +27,18 @@ function toSql(ob) {
 }
 
 const orm = {
-  selectAll: function (tableInput, cb) {
-    const queryString = "SELECT * FROM " + tableInput + ";";
-    connection.query(queryString, function (err, res) {
+  all: function (tableInput, cb) {
+    var queryString = "SELECT * FROM " + tableInput + ";";
+    connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
       }
-      cb(res);
-    })
+      cb(result);
+    });
   },
 
-  insertOne: function (table, cols, vals, cb) {
-    const queryString = "INSERT INTO " + table;
+  create: function (table, cols, vals, cb) {
+    var queryString = "INSERT INTO " + table;
 
     queryString += " (";
     queryString += cols.toString();
@@ -47,21 +47,24 @@ const orm = {
     queryString += insertQMarks(vals.length);
     queryString += ") ";
 
-    connection.query(queryString, vals, function (err, res) {
+    console.log(queryString);
+
+    connection.query(queryString, vals, function (err, result) {
       if (err) {
         throw err;
       }
-      cb(res);
-    })
+
+      cb(result);
+    });
   },
 
-  updateOne: function (table, updatedInfo, cond, cb) {
-    const queryString = "UPDATE " + table;
+  update: function (table, objColVals, condition, cb) {
+    var queryString = "UPDATE " + table;
 
     queryString += " SET ";
-    queryString += toSql(updatedInfo);
+    queryString += toSql(objColVals);
     queryString += " WHERE ";
-    queryString += cond;
+    queryString += condition;
 
     console.log(queryString);
     connection.query(queryString, function (err, result) {
@@ -73,7 +76,7 @@ const orm = {
     });
   },
 
-  deleteOne: function (table, cond, cb) {
+  delete: function (table, cond, cb) {
     var queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
     queryString += cond;
