@@ -31,18 +31,18 @@ This project is a full stack application that allows you to place an order for a
 This project uses MySQL, Node, Express, Handlebars, ORM. Node and MySQL are used to query and route data in the application. Express is the backend web framework used for this application, and Handlebars is a language that is used to generate the HTML.
 
 ### <a name="about-mvc"></a> MVC design
-This project also follows the MVC design. The MVC design assigns objects in the application one of three roles (model, view, or controller) and defines the way the different parts of the application communicate with each other.
+This project also follows the MVC design. The MVC design assigns objects in the application one of three roles and defines the way the different parts of the application communicate with each other.
 
   * <b>View object:</b>
-  A view object is an object in the application that is visible (in the user interface) to the end user of the application. The view displays data from the application's model and learns about any changes to the model data via the controller. For example, in this application, the user enters a burger name in a text field. The view communicates the user input via the controller to the model.
+  A view object is an object in the application that is visible to the end user of the application. The view displays data from the application's model and learns about any changes to the model data via the controller. For example, in this application, the user enters a burger name in a text field. The view communicates the user input via the controller to the model.
 
   * <b>Controller object:</b>
-  A controller object controls the flow of data between the view and the model (that is, the controller is an intermediary between the two). The controller interprets any user changes made in the view and communicates the changed data to the model. Also, if the model were to change, the controller is what communicates the updated data to the view so that the user can see the updated data in the user interface.
+  A controller object controls the flow of data between the view and the model. The controller interprets any user changes made in the view and communicates the changed data to the model. Also, if the model were to change, the controller is what communicates the updated data to the view so that the user can see the updated data in the user interface.
 
   * <b>Model object:</b>
-  A model object manages the data. When data is created or changed by the user in the view (for example, a user devours or throws away a burger), that change is communicated via the controller to the model. Also, when data is created or changed in the model, the model communicates that change via the controller to the view, and the view displays the updated data to the user.
+  A model object manages the data. When data is created or changed by the user in the view, that change is communicated via the controller to the model. Also, when data is created or changed in the model, the model communicates that change via the controller to the view, and the view displays the updated data to the user.
 
-For more information about the MVC design pattern, check out the following resources:
+For more information about the MVC design, check out the following:
   * https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
   * https://docs.microsoft.com/en-us/aspnet/core/mvc/overview
 
@@ -106,11 +106,11 @@ The first step is to clone the project repository to a local directory on your c
       </ul>
   </li>
   <li>
-    <p><b>controllers</b>: Contains a file called <b>burger_controllers.js</b>, which contains different routes (GET, POST, PUT, and DELETE). These routes are used to pass information to and from the view and model objects.</p>
+    <p><b>controllers</b>: Contains a file called <b>burger_controllers.js</b>, which contains different routes. These routes are used to pass information to and from the view and model objects.</p>
   <li>
     <p><b>views</b>: Contains the Handlebars files, which are templates used to generate the html files.</p> 
   </li>
-  <li><b>package.json</b>: Lists the project dependencies (third party npm packages) and their version numbers.</li>
+  <li><b>package.json</b>: Lists the project dependencies and their version numbers.</li>
   <li><b>.gitignore</b>: Anything listed inside this file will not be tracked by GitHub when code is committed.</li>
   <li><b>package-lock.json</b>: Dependency tree for the project. Lists all the dependencies and their versions.</li>
 </ul>
@@ -202,7 +202,11 @@ node server.js
 
 ## <a name="Acknowledgments"></a> Acknowledgments 
 * <a href="https://fontawesome.com/icons?d=gallery">Font Awesome</a> for Throw away burger trash can icon and burger icon.
-* <a href="https://github.com/philipstubbs13">Phil Stubbs</a> for help with a professional read me file.
+* <a href="https://guides.github.com/features/mastering-markdown/">Github Guides</a> for help with a professional readme file.
+* <a href="https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/about-readmes#relative-links-and-image-paths-in-readme-files">Github Docs</a> for help with a professional readme file.
+* <a href="https://github.com/philipstubbs13">Phillip Stubbs</a> for help with a beautiful readme format/layout.
+* <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">Wikipedia</a> for help with information used in the readme file.
+* <a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/overview">MVC Microsoft Docs</a> for help with information used in the readme file.
 
 ## <a name="design-improvements"></a> Design improvements
 * Add a form that allows users to pair their name with the burger.
