@@ -1,22 +1,22 @@
 <div class="container">
   <!--Jumbotron-->
-  <div class="jumbotron text-center bg-primary text-white">
-    <h1 class="display-4" id="app-title">Eat-Da-Burger!</h1>
+  <div class="jumbotron text-center bg-secondary text-danger">
+    <h1 class="display-4 text-danger" id="app-title">Eat-Da-Burger!</h1>
     <p class="lead">Welcome to Eat-Da-Burger! Where you can eat da burger!</p>
   </div>
   <div class="row">
     <div class="col-md-12">
-      <div class="card border border-primary">
-        <div class="card-header bg-primary">
+      <div class="card border border-secondary">
+        <div class="card-header bg-secondary text-danger">
           Which burger would you like to try?
         </div>
-        <div class="card-body">
+        <div class="card-body text-danger">
           <form class="add-burger">
             <div class="form-group">
               <label for="burger">Place order here:</label>
               <input type="text" class="form-control" id="burger" placeholder="">
             </div>
-            <button class="btn btn-primary" type="submit">Add Burger</button>
+            <button class="btn btn-success text-white" type="submit">Add Burger</button>
           </form>
         </div>
       </div>
@@ -24,11 +24,11 @@
   </div>
   <div class="row mt-4">
     <div class="col-md-6 mt-4">
-      <div class="card border border-primary">
-        <div class="card-header bg-primary">
+      <div class="card border border-success">
+        <div class="card-header bg-success text-white">
           Burgers
         </div>
-        <div class="card-body">
+        <div class="card-body bg-secondary">
           <ul>
             {{#each burgers}}
               {{#unless devoured}}
@@ -40,16 +40,18 @@
       </div>
     </div>
     <div class="col-md-6 mt-4">
-      <div class="card devoured-card">
-        <div class="card-header" id="devoured-card-header">
+      <div class="card devoured-card border-danger">
+        <div class="card-header bg-danger text-white" id="devoured-card-header">
           Devoured Burgers
         </div>
-        <div class="card-body">
+        <div class="card-body bg-secondary">
+          <ul>
             {{#each burgers}}
-          {{#if devoured}}
-          {{> burgers/devoured devour=true}}
-          {{/if}}
-          {{/each}}
+              {{#if devoured}}
+                {{> burgers/devoured devour=true}}
+              {{/if}}
+            {{/each}}
+          </ul>
         </div>
       </div>
     </div>
@@ -57,12 +59,12 @@
   <div class="row mt-5">
     <div class="col-md-12">
       <div class="card footer">
-        <div class="card-body footer-body">
-          <h5 class="card-title">Eat-Da-Burger!</h5>
+        <div class="card-body footer-body text-danger text-center bg-secondary">
+          <h5 class="card-title text-danger">Eat-Da-Burger!</h5>
           <p class="card-text">Welcome to Eat-Da-Burger!</p>
-          <a href="https://github.com/btoney1988/burger" class="btn btn-primary mr-2" target="_blank">GitHub
+          <a href="https://github.com/btoney1988/burger" class="btn btn-secondary mr-2" target="_blank">GitHub
             Repo</a>
-          <a href="https://www.linkedin.com/in/brian-toney-978a891a7/" class="btn btn-primary"
+          <a href="https://www.linkedin.com/in/brian-toney-978a891a7/" class="btn btn-secondary"
             target="_blank">LinkedIn</a>
         </div>
       </div>
