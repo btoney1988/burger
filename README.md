@@ -173,7 +173,9 @@ To set up a development database that you can use with this application, perform
 <pre>
 node server.js
 </pre>
+
 ![image](https://user-images.githubusercontent.com/68873509/98727282-b3ca9800-2365-11eb-8af8-192166574186.png)
+
 <p>To verify that the server has started and the application is working locally on your computer, open Chrome and go to <a href="http://localhost:3000">http://localhost:3000</a>.</p>
 
 ## <a name="screenshots"></a> Screenshots
