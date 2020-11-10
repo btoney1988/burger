@@ -1,4 +1,3 @@
-# burger
 # Eat-A-Burger
 A full stack, MVC (Model-View-Controller) application that allows you to create burgers, view a list of burgers available to eat, devour burgers, and throw them away after devoured.
 
