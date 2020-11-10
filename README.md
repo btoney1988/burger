@@ -161,11 +161,11 @@ To set up a development database that you can use with this application, perform
 <li>
   <p>To populate the burgers table with some starting burger data, open up the <b>db/seeds.sql</b> file and paste the contents into MySQL Workbench. Execute the code in <b>seeds.sql</b> from MySQL Workbench:</p>
   <pre>
- INSERT INTO burgers (burger_name, devoured) VALUES ("Bacon Cheddar", true);
+  INSERT INTO burgers (burger_name, devoured) VALUES ("Bacon Cheddar", true);
 
-  INSERT INTO burgers (burger_name, devoured) VALUES ("BLT", false);
+    INSERT INTO burgers (burger_name, devoured) VALUES ("BLT", false);
 
-  INSERT INTO burgers (burger_name, devoured) VALUES ("Mondo", true);
+    INSERT INTO burgers (burger_name, devoured) VALUES ("Mondo", true);
   </pre>
 </li>
 </ol>
