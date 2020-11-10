@@ -115,6 +115,21 @@ The first step is to clone the project repository to a local directory on your c
   <li><b>package-lock.json</b>: Dependency tree for the project. Lists all the dependencies and their versions.</li>
 </ul>
 
+### <a name="install-node"></a> 2. Install Node.js
+<p>If you don't already have Node.js installed on your computer, you can install the latest version here: https://nodejs.org/en/.</p>
+
+### <a name="dependencies"></a> 3. Install the dependencies
+<p>The following npm packages are dependencies to the project.</p>
+<p>After you clone the repository to a local directory, change directory to the project root directory and run the following command to install the required npm packages:</p>
+<pre>npm install</pre>
+<ul>
+	<li><b>express</b> -  a Node.js web application framework (https://www.npmjs.com/package/express).</li>
+  <li><b>mysql</b> - used to create a connection to the MySQL database via the command line.(https://www.npmjs.com/package/mysql)</li>
+  <li><b>express-handlebars</b> - allows you to use handlebars to create templates to build the HTML.</li>(https://www.npmjs.com/package/express-handlebars)</li>
+</ul>
+
+<p>Version information for each of these packages is available in the <b>package.json</b> file in the project root directory.</p>
+
 ### <a name="install-mysql"></a> 4. Install MySQL Workbench
 <p>If you don't already have MySQL Workbench installed on your computer, you can install the latest version here: https://www.mysql.com/products/workbench/</p>
 <p>For this project, MySQL Workbench is used to visually design, create, and manage the database used to store burger data.</p>
