@@ -1,8 +1,8 @@
 <div class="container">
   <!--Jumbotron-->
   <div class="jumbotron text-center bg-secondary text-danger">
-    <h1 class="display-4 text-danger" id="app-title">Eat-Da-Burger!</h1>
-    <p class="lead">Welcome to Eat-Da-Burger! Where you can eat da burger!</p>
+    <h1 class="display-4 text-danger" id="app-title">Eat-Da-<i class="fas fa-hamburger"></i>!</h1>
+    <p class="lead">Welcome to Eat-Da-<i class="fas fa-hamburger"></i>! Where you can eat da <i class="fas fa-hamburger"></i>!</p>
   </div>
   <div class="row">
     <div class="col-md-12">
@@ -16,7 +16,7 @@
               <label for="burger">Place order here:</label>
               <input type="text" class="form-control" id="burger" placeholder="">
             </div>
-            <button class="btn btn-success text-white" type="submit">Add Burger</button>
+            <button class="btn btn-success text-white" type="submit">Add <i class="fas fa-hamburger"></i></button>
           </form>
         </div>
       </div>
@@ -60,68 +60,62 @@
     <div class="col-md-12">
       <div class="card footer">
         <div class="card-body footer-body text-danger text-center bg-secondary">
-          <h5 class="card-title text-danger">Eat-Da-Burger!</h5>
-          <p class="card-text">Welcome to Eat-Da-Burger!</p>
-          <a href="https://github.com/btoney1988/burger" class="btn btn-secondary mr-2" target="_blank">GitHub
-            Repo</a>
+          <h5 class="card-title text-danger">Eat-Da-<i class="fas fa-hamburger"></i>!</h5>
+          <p class="card-text">Welcome to Eat-Da-<i class="fas fa-hamburger"></i>!</p>
+          <a href="https://github.com/btoney1988/burger" class="btn btn-secondary mr-2 text" target="_blank"><i class="fab fa-github-square fa-2x" alt="Github Link"></i></a>
           <a href="https://www.linkedin.com/in/brian-toney-978a891a7/" class="btn btn-secondary"
-            target="_blank">LinkedIn</a>
+            target="_blank"><i class="fab fa-linkedin fa-2x" alt="Linkedin Link"></i></a>
         </div>
       </div>
     </div>
   </div>
-
-  <script type="text/javascript">
+</div>
+<script type="text/javascript">
   $(function () {
-      $(".add-burger").on("submit", function (event) {
-        event.preventDefault();
+    $(".add-burger").on("submit", function (event) {
+      event.preventDefault();
 
-        var newBurger = {
-          burger_name: $("#burger").val().trim(),
-          devoured: 0
-        };
+      var newBurger = {
+        burger_name: $("#burger").val().trim(),
+        devoured: 0
+      };
 
-        $.ajax("/api/burgers", {
-          type: "POST",
-          data: newBurger
-        }).then(
-          function () {
-            console.log("created new burger");
-            location.reload();
-          }
-        );
-      });
-
-      $(".delete").on("click", function (event) {
-        const id = $(this).data("id");
-
-        $.ajax("/api/burgers/" + id, {
-          type: "DELETE",
-        }).then(
-          function () {
-            console.log("deleted burger", id);
-            location.reload();
-          }
-        );
-      });
-
-      $(".devour").on("click", function (event) {
-        const id = $(this).data("id");
-        const newDevour = $(this).data("newdevour");
-
-        const newDevourState = {
-          devoured: "true"
-        };
-
-        $.ajax("/api/burgers/" + id, {
-          type: "PUT",
-          data: newDevourState
-        }).then(
-          function () {
-            console.log("changed devour to", newDevour);
-            location.reload();
-          }
-        );
-      });
+      $.ajax("/api/burgers", {
+        type: "POST",
+        data: newBurger
+      }).then(
+        function () {
+          console.log("created new burger");
+          location.reload();
+        }
+      );
     });
-    </script>
+    $(".delete").on("click", function (event) {
+      const id = $(this).data("id");
+       $.ajax("/api/burgers/" + id, {
+        type: "DELETE",
+      }).then(
+        function () {
+          console.log("deleted burger", id);
+          location.reload();
+        }
+      );
+    });
+    $(".devour").on("click", function (event) {
+      const id = $(this).data("id");
+      const newDevour = $(this).data("newdevour");
+      const newDevourState = {
+        devoured: "true"
+      };
+      $.ajax("/api/burgers/" + id, {
+        type: "PUT",
+        data: newDevourState
+      }).then(
+        function () {
+          console.log("changed devour to", newDevour);
+          location.reload();
+        }
+      );
+    });
+  });
+</script>
