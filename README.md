@@ -163,9 +163,9 @@ To set up a development database that you can use with this application, perform
   <pre>
   INSERT INTO burgers (burger_name, devoured) VALUES ("Bacon Cheddar", true);
 
-    INSERT INTO burgers (burger_name, devoured) VALUES ("BLT", false);
+  INSERT INTO burgers (burger_name, devoured) VALUES ("BLT", false);
 
-    INSERT INTO burgers (burger_name, devoured) VALUES ("Mondo", true);
+  INSERT INTO burgers (burger_name, devoured) VALUES ("Mondo", true);
   </pre>
 </li>
 </ol>
